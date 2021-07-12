@@ -4,9 +4,9 @@ Priority: optional
 Build-Depends: debhelper (>= 9),
  cmake,
  pkg-config,
- gstreamer1.5-plugins-bad,
- gstreamer1.5-plugins-base,
- gstreamer1.5-plugins-good,
+ gstreamer1.0-plugins-bad,
+ gstreamer1.0-plugins-base,
+ gstreamer1.0-plugins-good,
  kms-core-dev (>= 6.16.1),
  kms-elements-dev (>= 6.16.1),
  kms-filters-dev (>= 6.16.1),
@@ -22,12 +22,14 @@ Architecture: any
 Section: libs
 Depends: ${shlibs:Depends},
  ${misc:Depends},
- gstreamer1.5-plugins-bad,
- gstreamer1.5-plugins-base,
- gstreamer1.5-plugins-good,
+ gstreamer1.0-plugins-bad,
+ gstreamer1.0-plugins-base,
+ gstreamer1.0-plugins-good,
  kms-core (>= 6.16.1),
  kms-elements (>= 6.16.1),
  kms-filters (>= 6.16.1)
+Breaks: kms-pointerdetector-6.0
+Replaces: kms-pointerdetector-6.0
 Description: Kurento Pointer Detector filter
 
 Package: kms-pointerdetector-dev
@@ -39,10 +41,14 @@ Depends: kms-pointerdetector (= ${binary:Version}),
  kms-filters-dev,
  libopencv-dev,
  libsoup2.4-dev
+Breaks: kms-pointerdetector-6.0-dev
+Replaces: kms-pointerdetector-6.0-dev
 Description: Kurento Pointer Detector filter - Development files
 
 Package: kms-pointerdetector-dbg
 Architecture: any
 Section: debug
 Depends: kms-pointerdetector (= ${binary:Version})
+Breaks: kms-pointerdetector-6.0-dbg
+Replaces: kms-pointerdetector-6.0-dbg
 Description: Kurento Pointer Detector filter - Debug symbols
